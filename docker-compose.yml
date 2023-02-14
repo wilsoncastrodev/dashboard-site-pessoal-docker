@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  server-app:
+    container_name: "dashboard-site-pessoal-api"
+    image: node:19
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./server-app:/app
+    stdin_open: true
+    tty: true
+    ports:
+      - "4000:4000"
+  client-app:
+    container_name: "dashboard-site-pessoal"
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ./client-app/build:/usr/share/nginx/html
+      - ./client-app/nginx:/etc/nginx/conf.d
+    ports:
+      - "4010:4010"
+
+# Comando para entrar no container dashboard-site-pessoal-api
+# docker exec -it dashboard-site-pessoal-api bash
+# Comando para executar dentro do container dashboard-site-pessoal-api
+# rm -rf node_modules
+# npm install
+# npm start
+
+# Comando para entrar no container dashboard-site-pessoal
+# docker exec -it dashboard-site-pessoal bash

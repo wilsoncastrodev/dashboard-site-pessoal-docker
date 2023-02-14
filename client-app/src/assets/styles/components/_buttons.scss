@@ -1,0 +1,31 @@
+.btn {
+  font-size: 1.07rem;
+  color: $white;
+  border-radius: 4px;
+
+  &.btn-primary {
+    background: $primary;
+    border: none;
+
+    &:hover {
+      background: darken($primary, 2%);
+    }
+
+    &-alt {
+        background: $blue-700;
+        border: none;
+        font-family: 'Rubik';
+        border-radius: 6px;
+        padding: 12px 14px;
+        font-size: 15px;
+
+        &:hover {
+          background: darken($blue-700, 2%);
+        }
+    }
+  }
+
+  &.btn-block {
+    padding: 11px 20px;
+  }
+}
